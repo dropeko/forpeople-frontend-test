@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Form, InputGroup, Button } from 'react-bootstrap';
+import { Form, InputGroup } from 'react-bootstrap';
+import SearchIcon from '@mui/icons-material/Search';
 
 interface SearchBarProps {
   onSearch: (term: string) => void;
@@ -8,26 +9,22 @@ interface SearchBarProps {
 const SearchBar = ({ onSearch }: SearchBarProps) => {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const handleSearch = () => {
-    onSearch(searchTerm);
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const term = e.target.value;
+    setSearchTerm(term);
+    onSearch(term);
   };
 
   return (
-    <InputGroup className="mb-2 mt-2 w-50 p-1">
+    <InputGroup className="mb-2 mt-2 w-50 p-1 rounded-1">
       <Form.Control
         type="text"
-        placeholder="Pesquisar por nome da rádio"
+        placeholder="Pesquisar por nome, país ou idioma"
         value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+        onChange={handleInputChange}
         style={{ backgroundColor: 'var(--light)', color: 'var(--white)' }}
       />
-      <Button
-        variant="primary"
-        onClick={handleSearch}
-        style={{ backgroundColor: 'var(--primary)', borderColor: 'var(--primary)' }}
-      >
-        Pesquisar
-      </Button>
+      <SearchIcon style={{ color: 'var(--primary)', fontWeight: 'bold', width: '3.75rem' }} />
     </InputGroup>
   );
 };

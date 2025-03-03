@@ -38,7 +38,6 @@ const RadioCard = ({ radio, onAddFavorite, onRemoveFavorite, onEditFavorite }: R
 
           <div className="d-flex gap-1 align-items-center">
             <Button
-              variant="primary"
               onClick={() => window.open(radio.homepage, '_blank')}
               style={{ backgroundColor: 'var(--primary)', borderColor: 'var(--primary)' }}
             >
@@ -47,7 +46,6 @@ const RadioCard = ({ radio, onAddFavorite, onRemoveFavorite, onEditFavorite }: R
             </Button>
             {onAddFavorite && (
               <Button
-                variant="success"
                 onClick={onAddFavorite}
                 style={{ backgroundColor: 'var(--secondary)', borderColor: 'var(--secondary)' }}
               >
@@ -57,7 +55,6 @@ const RadioCard = ({ radio, onAddFavorite, onRemoveFavorite, onEditFavorite }: R
             )}
             {onEditFavorite && (
               <Button
-                variant="warning"
                 onClick={onEditFavorite}
                 style={{ backgroundColor: 'var(--secondary)', borderColor: 'var(--secondary)' }}
               >
@@ -67,9 +64,8 @@ const RadioCard = ({ radio, onAddFavorite, onRemoveFavorite, onEditFavorite }: R
             )}
             {onRemoveFavorite && (
               <Button
-                variant="danger"
                 onClick={onRemoveFavorite}
-                style={{ backgroundColor: 'var(--secondary)', borderColor: 'var(--secondary)' }}
+                style={{ backgroundColor: 'var(--primary)', borderColor: 'var(--secondary)' }}
               >
                 <DeleteIcon />
                 Remover
