@@ -1,0 +1,7 @@
+.footer-navbar {
+  background-color: var(--bg-component) !important;
+}
+
+.footer-text {
+  color: var(--text-color) !important;
+}

@@ -1,0 +1,21 @@
+.searchbar-container {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+}
+
+.searchbar-input {
+  background-color: var(--bg-component) !important;
+  color: var(--text-color) !important;
+  border-color: var(--primary) !important;
+}
+
+.searchbar-icon {
+  color: var(--accent);
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.searchbar-input::placeholder {
+  color: var(--lightAccent) !important;
+}

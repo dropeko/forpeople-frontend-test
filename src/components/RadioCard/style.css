@@ -1,0 +1,36 @@
+.radio-card-container {
+  background-color: var(--bg-component) !important;
+}
+
+.radio-card-img {
+  width: 3.125rem !important;
+height: 3.125rem !important;
+}
+
+.radio-card-title {
+  color: var(--text-color) !important;
+}
+
+.radio-card-text {
+  color: var(--text-color) !important;
+}
+
+.radio-card-btn-favorite {
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+
+.radio-card-btn-home {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+.radio-card-btn-edit {
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+
+.radio-card-btn-remove {
+  background-color: var(--secondary) !important;
+  border-color: var(--secondary) !important;
+}

@@ -5,6 +5,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import './style.css';
 
 interface RadioCardProps {
   radio: Radio;
@@ -15,7 +16,7 @@ interface RadioCardProps {
 
 const RadioCard = ({ radio, onAddFavorite, onRemoveFavorite, onEditFavorite }: RadioCardProps) => {
   return (
-    <Card className="mb-1" style={{ backgroundColor: 'var(--light)' }}>
+    <Card className="mb-1 radio-card-container">
       <Card.Body>
         <div className="d-flex justify-content-between align-items-center">
           <div className="d-flex align-items-center gap-3">
@@ -24,51 +25,50 @@ const RadioCard = ({ radio, onAddFavorite, onRemoveFavorite, onEditFavorite }: R
               <img
                 src={radio.favicon}
                 alt={radio.name}
-                className="rounded-circle"
-                style={{ width: '50px', height: '50px' }}
+                className="rounded-circle radio-card-img"
               />
             )}
             <div>
-              <Card.Title style={{ color: 'var(--white)' }}>{radio.name}</Card.Title>
-              <Card.Text style={{ color: 'var(--white)' }}>
+              <Card.Title className="radio-card-title">{radio.name}</Card.Title>
+              <Card.Text className="radio-card-text">
                 {radio.country} - {radio.language}
               </Card.Text>
             </div>
           </div>
 
           <div className="d-flex gap-1 align-items-center">
-            <Button
-              onClick={() => window.open(radio.homepage, '_blank')}
-              style={{ backgroundColor: 'var(--primary)', borderColor: 'var(--primary)' }}
-            >
-              <HomeIcon />
-              Visitar Homepage
-            </Button>
             {onAddFavorite && (
               <Button
                 onClick={onAddFavorite}
-                style={{ backgroundColor: 'var(--secondary)', borderColor: 'var(--secondary)' }}
+                className="radio-card-btn-favorite"
               >
                 <FavoriteIcon />
-                Adicionar Favorito
+                Favorite
               </Button>
             )}
+            <Button
+              onClick={() => window.open(radio.homepage, '_blank')}
+              className="radio-card-btn-home"
+            >
+              <HomeIcon />
+              Rádio Page
+            </Button>
             {onEditFavorite && (
               <Button
                 onClick={onEditFavorite}
-                style={{ backgroundColor: 'var(--secondary)', borderColor: 'var(--secondary)' }}
+                className="radio-card-btn-edit"
               >
                 <EditIcon />
-                Editar
+                Edit
               </Button>
             )}
             {onRemoveFavorite && (
               <Button
                 onClick={onRemoveFavorite}
-                style={{ backgroundColor: 'var(--primary)', borderColor: 'var(--secondary)' }}
+                className="radio-card-btn-remove"
               >
                 <DeleteIcon />
-                Remover
+                Remove
               </Button>
             )}
           </div>

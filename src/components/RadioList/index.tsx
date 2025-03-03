@@ -2,6 +2,7 @@ import { useState } from 'react';
 import RadioCard from '../RadioCard';
 import { Radio } from '../../utils/types/types';
 import { Pagination } from 'react-bootstrap';
+import './style.css';
 
 interface RadioListProps {
   radios: Radio[];
@@ -12,7 +13,7 @@ interface RadioListProps {
 
 const RadioList = ({ radios, onAddFavorite, onRemoveFavorite, onEditFavorite }: RadioListProps) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const radiosPerPage = 7;
+  const radiosPerPage = 6;
   const totalPages = Math.ceil(radios.length / radiosPerPage);
 
   const startIndex = (currentPage - 1) * radiosPerPage;
@@ -29,7 +30,7 @@ const RadioList = ({ radios, onAddFavorite, onRemoveFavorite, onEditFavorite }: 
   }
 
   return (
-    <div className='d-flex flex-column p-1'>
+    <div className="radio-list-container">
       {paginatedRadios.map((radio) => (
         <RadioCard
           key={radio.stationuuid}
@@ -40,7 +41,7 @@ const RadioList = ({ radios, onAddFavorite, onRemoveFavorite, onEditFavorite }: 
         />
       ))}
       {totalPages > 1 && (
-        <Pagination className="mt-3 justify-content-center">
+        <Pagination className="radio-list-pagination">
           <Pagination.Prev
             disabled={currentPage === 1}
             onClick={() => handlePageChange(currentPage - 1)}

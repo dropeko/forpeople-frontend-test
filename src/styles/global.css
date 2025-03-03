@@ -1,10 +1,13 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
 :root {
-  --primary: #186edf;
-  --secondary: #004ac2;
-  --dark: #272727;
-  --light: #838383;
-  --white: #FFFFFF;
-  
+  --primary: #004766;
+  --secondary: #003366;
+  --tertiary: #003247;
+  --accent: #80d9ff;
+  --lightAccent: #bfecff;  
+
+  --bg-gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+  --bg-component: var(--tertiary);
+  --text-color: var(--lightAccent);
 }

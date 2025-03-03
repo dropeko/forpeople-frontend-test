@@ -1,10 +1,11 @@
 import { Navbar, Container } from 'react-bootstrap';
+import './style.css';
 
 const Footer = () => {
   return (
-    <Navbar bg="dark" variant="dark" style={{ backgroundColor: 'var(--dark)' }}>
+    <Navbar className="footer-navbar">
       <Container className="justify-content-center">
-        <Navbar.Text style={{ color: 'var(--white)' }}>
+        <Navbar.Text className="footer-text">
           &copy; Desenvolvido cuidadosamente por @phca.dev
         </Navbar.Text>
       </Container>
