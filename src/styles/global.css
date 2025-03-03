@@ -1,0 +1,10 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+  --primary: #186edf;
+  --secondary: #004ac2;
+  --dark: #272727;
+  --light: #838383;
+  --white: #FFFFFF;
+  
+}
