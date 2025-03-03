@@ -1,0 +1,45 @@
+.sidebar-container {
+  background-color: var(--bg-component);
+  width: 30%;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+.sidebar-list-container {
+  margin-top: 1rem;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.sidebar-radio-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.sidebar-radio-img {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+}
+
+.sidebar-radio-name {
+  color: var(--text-color);
+}
+
+.sidebar-icon-container {
+  margin-left: auto;
+}
+
+.sidebar-favorite-icon {
+  cursor: pointer;
+  color: var(--accent);
+}
+
+.sidebar-delete-icon {
+  cursor: pointer;
+  color: var(--lightAccent);
+}

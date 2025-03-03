@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import useRadioStore from './store/useRadioStore';
 import HomePage from './pages/HomePage';
 import FavoritesPage from './pages/FavoritesPage';
+import { API_BASE_URL } from './utils/constants/baseUrl';
 
 function App() {
   const setAllRadios = useRadioStore((state) => state.setAllRadios);
@@ -11,9 +12,7 @@ function App() {
   useEffect(() => {
     const fetchRadios = async () => {
       try {
-        const response = await axios.get(
-          'https://de1.api.radio-browser.info/json/stations/search?limit=100'
-        );
+        const response = await axios.get(API_BASE_URL);
         
         const filteredRadios = response.data.map((radio: any) => ({
           stationuuid: radio.stationuuid,
@@ -29,8 +28,6 @@ function App() {
           bitrate: radio.bitrate,
         }));
         setAllRadios(filteredRadios);
-        console.log(filteredRadios);
-        
       } catch (error) {
         console.error('Erro ao carregar rádios:', error);
       }

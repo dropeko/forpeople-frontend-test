@@ -1,0 +1,13 @@
+.audio-player-container {
+  margin-top: 1rem;
+}
+
+.audio-player-button-playing {
+  background-color: var(--secondary) !important;
+  border-color: var(--secondary) !important;
+}
+
+.audio-player-button-stopped {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}

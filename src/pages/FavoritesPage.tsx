@@ -21,20 +21,25 @@ const FavoritesPage = () => {
     : favoriteRadios;
 
   return (
-    <div className="p-1 d-flex w-100 min-vh-100">
+    <div 
+      className="d-flex w-100 min-vh-100"
+      style={{ height: '100vh', overflow: 'hidden' }}
+    >
       <Sidebar />
-      <div className="w-100 d-flex flex-column bg-body">
+      <div 
+        className="w-100 d-flex flex-column bg-body"
+        style={{ height: '100vh' }}
+      >
         <Header />
-        <h2 style={{ color: 'var(--light)' }}>Favorite Radios</h2>
         <SearchBar onSearch={handleSearch} />
-        <div className="flex-grow-1">
+        <div className="flex-grow-1" style={{ overflowY: 'auto' }}>
           <RadioList
             radios={filteredFavorites}
             onRemoveFavorite={removeFavorite}
             onEditFavorite={editFavorite}
           />
         </div>
-        <Footer />
+      <Footer />
       </div>
     </div>
   );

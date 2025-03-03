@@ -11,12 +11,10 @@ const HomePage = () => {
   const addFavorite = useRadioStore((state) => state.addFavorite);
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Agora, handleSearch apenas atualiza o estado de busca
   const handleSearch = (term: string) => {
     setSearchTerm(term);
   };
 
-  // Filtra as rádios com base em "name", "country" e "language"
   const filteredRadios = searchTerm
     ? allRadios.filter((radio) =>
         radio.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -26,16 +24,19 @@ const HomePage = () => {
     : allRadios;
 
   return (
-    <div className="p-1 d-flex w-100 min-vh-100">
+    <div
+      className="d-flex w-100"
+      style={{ height: '100vh', overflow: 'hidden' }}
+    >
       <Sidebar />
-      <div className="w-100 d-flex flex-column bg-body">
+      <div
+        className="w-100 d-flex flex-column bg-body"
+        style={{ height: '100vh' }}
+      >
         <Header />
         <SearchBar onSearch={handleSearch} />
-        <div className="flex-grow-1">
-          <RadioList
-            radios={filteredRadios}
-            onAddFavorite={addFavorite}
-          />
+        <div className="flex-grow-1" style={{ overflowY: 'auto' }}>
+          <RadioList radios={filteredRadios} onAddFavorite={addFavorite} />
         </div>
         <Footer />
       </div>

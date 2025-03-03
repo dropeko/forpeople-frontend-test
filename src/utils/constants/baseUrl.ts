@@ -1,0 +1,1 @@
+export const API_BASE_URL = 'https://de1.api.radio-browser.info/json/stations/search?limit=40';
