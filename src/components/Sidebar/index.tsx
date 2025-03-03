@@ -5,7 +5,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const Sidebar = () => {
   return (
-    <Nav className="flex-column p-1" style={{ backgroundColor: 'var(--dark)' }}>
+    <Nav className="flex-column p-1" style={{ backgroundColor: 'var(--dark)', width: '20%' }}>
       <Nav.Link as={Link} to="/" style={{ color: 'var(--white)' }} className='d-flex align-items-center'>
         <HomeIcon style={{ marginRight: '.5rem' }} />
         Home

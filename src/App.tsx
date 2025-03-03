@@ -3,7 +3,7 @@ import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import useRadioStore from './store/useRadioStore';
 import HomePage from './pages/HomePage';
-// import FavoritesPage from './pages/FavoritesPage';
+import FavoritesPage from './pages/FavoritesPage';
 
 function App() {
   const setAllRadios = useRadioStore((state) => state.setAllRadios);
@@ -12,7 +12,7 @@ function App() {
     const fetchRadios = async () => {
       try {
         const response = await axios.get(
-          'https://de1.api.radio-browser.info/json/stations/search?limit=10'
+          'https://de1.api.radio-browser.info/json/stations/search?limit=100'
         );
         
         const filteredRadios = response.data.map((radio: any) => ({
@@ -43,7 +43,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        {/* <Route path="/favorites" element={<FavoritesPage />} /> */}
+        <Route path="/favorites" element={<FavoritesPage />} />
       </Routes>
     </Router>
   );
