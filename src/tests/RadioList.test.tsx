@@ -29,6 +29,9 @@ describe('RadioList Component', () => {
     url_resolved: `http://test.url/resolved/${index}`,
     homepage: `http://test.homepage/${index}`,
     favicon: `http://test.favicon/${index}`,
+    votes: 0,
+    codec: 'MP3',
+    bitrate: 128, 
   }));
 
   const mockOnAddFavorite = vi.fn();
