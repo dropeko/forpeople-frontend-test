@@ -24,6 +24,7 @@ vi.mock('../components/AudioPlayer', () => ({
 
 describe('RadioCard Component', () => {
   const mockRadio: Radio = {
+    stationuuid: 'uuid-123',
     name: 'Test Radio',
     country: 'Test Country',
     language: 'Test Language',
@@ -31,6 +32,9 @@ describe('RadioCard Component', () => {
     url_resolved: 'http://test.url/resolved',
     homepage: 'http://test.homepage',
     favicon: 'http://test.favicon',
+    votes: 0,
+    codec: 'MP3',
+    bitrate: 128,
   };
 
   const mockOnAddFavorite = vi.fn();
