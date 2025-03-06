@@ -6,7 +6,7 @@ const Footer = () => {
     <Navbar className="footer-navbar">
       <Container className="justify-content-center">
         <Navbar.Text className="footer-text">
-          &copy; Desenvolvido cuidadosamente por @phca.dev
+          &copy; Desenvolvido por @phca.dev | OBGRT 2025
         </Navbar.Text>
       </Container>
     </Navbar>

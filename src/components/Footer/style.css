@@ -1,7 +1,13 @@
 .footer-navbar {
-  background-color: var(--bg-component) !important;
+  background: var(--bg-gradient) !important;
 }
 
 .footer-text {
   color: var(--text-color) !important;
+}
+
+@media (max-width: 730px) {
+  .footer-text {
+    font-size: .75rem;
+  }
 }

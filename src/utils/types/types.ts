@@ -16,6 +16,7 @@ export interface RadioStore {
   allRadios: Radio[];
   favoriteRadios: Radio[];
   setAllRadios: (radios: Radio[]) => void;
+  setFavoriteRadios: (favorites: Radio[]) => void;
   addFavorite: (radio: Radio) => void;
   removeFavorite: (stationuuid: string) => void;
   editFavorite: (stationuuid: string, updatedRadio: Partial<Radio>) => void;

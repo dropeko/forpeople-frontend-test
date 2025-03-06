@@ -7,6 +7,12 @@
   padding: 0.5rem;
 }
 
+.sidebar-subtitle {
+  padding-left: .5rem;
+  color: var(--text-color);
+  font-size: 1.25rem;
+}
+
 .sidebar-list-container {
   margin-top: 1rem;
   flex-grow: 1;
@@ -21,8 +27,8 @@
 }
 
 .sidebar-radio-img {
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
   margin-right: 0.5rem;
 }
 
@@ -42,4 +48,28 @@
 .sidebar-delete-icon {
   cursor: pointer;
   color: var(--lightAccent);
+}
+
+.hr-line {
+  color: white;
+  margin-right: .5rem;
+  margin-left: .5rem;
+  margin-top: .125rem;
+  margin-bottom: .125rem;
+}
+
+
+@media (max-width: 730px) {
+  .sidebar-subtitle {
+    font-size: 1rem;
+  }
+  
+  .sidebar-radio-name {
+    display: none;
+  }
+
+  .sidebar-favorite-icon,
+  .sidebar-delete-icon {
+    margin-right: 0.5rem;
+  }
 }

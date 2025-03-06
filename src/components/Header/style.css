@@ -4,15 +4,35 @@
   padding: 0.5rem 1rem;
 }
 
-.header-brand-text {
+.header-account-text {
   color: var(--text-color) !important;
 }
 
 .header-icon {
   margin-right: 0.5rem;
+  color: var(--text-color) !important;
 }
 
 .header-button {
   border-color: var(--accent) !important;
   color: var(--text-color) !important;
+}
+
+.header-full-brand-text {
+  color: var(--text-color) !important;
+}
+
+@media (max-width: 730px) {
+  .header-full-brand,
+  .header-full-brand-text {
+    display: none !important;
+  }
+  
+  .header-button-text {
+    display: none;
+  }
+
+  .header-icon {
+    margin-right: 0;
+  }
 }

@@ -4,7 +4,7 @@
 
 .radio-card-img {
   width: 3.125rem !important;
-height: 3.125rem !important;
+  height: 3.125rem !important;
 }
 
 .radio-card-title {
@@ -21,16 +21,55 @@ height: 3.125rem !important;
 }
 
 .radio-card-btn-home {
+  display: flex !important;
+  align-items: center !important;
   background-color: var(--primary) !important;
   border-color: var(--primary) !important;
 }
 
 .radio-card-btn-edit {
+  display: flex !important;
+  align-items: center !important;
   background-color: var(--accent) !important;
   border-color: var(--accent) !important;
 }
 
 .radio-card-btn-remove {
+  display: flex !important;
+  align-items: center !important;
   background-color: var(--secondary) !important;
   border-color: var(--secondary) !important;
+}
+
+@media (max-width: 1060px) {
+  .radio-card-info {
+    width: 60%;
+  }
+  .radio-card-btn-text {
+    display: none;
+  }
+}
+
+
+@media (max-width: 530px) {
+  .radio-card-info {
+    display: none;
+  }
+
+  .radio-card-left {
+    gap: 0.25rem;
+  }
+
+  .radio-card-img {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+  }
+  
+  .radio-card-btn-favorite,
+  .radio-card-btn-home,
+  .radio-card-btn-edit,
+  .radio-card-btn-remove {
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.75rem;
+  }
 }

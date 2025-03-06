@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import useRadioStore from '../store/useRadioStore';
 import RadioList from '../components/RadioList';
 import SearchBar from '../components/SearchBar';
@@ -7,8 +7,14 @@ import Footer from '../components/Footer';
 import Sidebar from '../components/Sidebar';
 
 const FavoritesPage = () => {
-  const { favoriteRadios, removeFavorite, editFavorite } = useRadioStore();
+  const { favoriteRadios, removeFavorite, editFavorite, setFavoriteRadios } = useRadioStore();
   const [searchTerm, setSearchTerm] = useState('');
+
+  const removeFavoriteWrapper = (stationuuid: string) => {
+    removeFavorite(stationuuid);
+    const currentFavorites = useRadioStore.getState().favoriteRadios;
+    localStorage.setItem('favoriteRadios', JSON.stringify(currentFavorites));
+  };
 
   const handleSearch = (term: string) => {
     setSearchTerm(term);
@@ -19,6 +25,13 @@ const FavoritesPage = () => {
         radio.name.toLowerCase().includes(searchTerm.toLowerCase())
       )
     : favoriteRadios;
+
+  useEffect(() => {
+    const storedFavorites = localStorage.getItem('favoriteRadios');
+    if (storedFavorites) {
+      setFavoriteRadios(JSON.parse(storedFavorites));
+    }
+  }, [setFavoriteRadios]);
 
   return (
     <div 
@@ -33,13 +46,13 @@ const FavoritesPage = () => {
         <Header />
         <SearchBar onSearch={handleSearch} />
         <div className="flex-grow-1" style={{ overflowY: 'auto' }}>
-          <RadioList
-            radios={filteredFavorites}
-            onRemoveFavorite={removeFavorite}
+          <RadioList 
+            radios={filteredFavorites} 
+            onRemoveFavorite={removeFavoriteWrapper}
             onEditFavorite={editFavorite}
           />
         </div>
-      <Footer />
+        <Footer />
       </div>
     </div>
   );

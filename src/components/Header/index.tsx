@@ -1,8 +1,9 @@
 import { Navbar, Container, Button } from 'react-bootstrap';
-import { useLocation, useNavigate, Link } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import RadioIcon from '@mui/icons-material/Radio';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import HomeIcon from '@mui/icons-material/Home';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import './style.css';
 
 const Header = () => {
@@ -13,14 +14,11 @@ const Header = () => {
   return (
     <Navbar expand="lg" className="header-navbar">
       <Container className="d-flex justify-content-between align-items-center">
-        <Navbar.Brand
-          as={Link}
-          to="/"
-          className="d-flex align-items-center header-brand-text"
-        >
-          <RadioIcon className="header-icon" />
-          Browser Radio
-        </Navbar.Brand>
+        <div className="d-flex align-items-center">
+          <AccountCircleIcon className="header-button me-1" />
+          <span className="header-account-text">Jhonny Cash</span>
+        </div>
+
         {isHomePage ? (
           <Button
             variant="outline-light"
@@ -28,7 +26,7 @@ const Header = () => {
             className="d-flex align-items-center header-button"
           >
             <FavoriteIcon className="header-icon" />
-            Favorites
+            <span className="header-button-text">Favorites</span>
           </Button>
         ) : (
           <Button
@@ -37,9 +35,14 @@ const Header = () => {
             className="d-flex align-items-center header-button"
           >
             <HomeIcon className="header-icon" />
-            Home
+            <span className="header-button-text">Home</span>
           </Button>
         )}
+        
+        <div className="header-full-brand">
+          <RadioIcon className="header-icon mb-2" />
+          <span className="header-full-brand-text">Old But Gold Radio Tune</span>
+        </div>
       </Container>
     </Navbar>
   );
