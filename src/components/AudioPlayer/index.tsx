@@ -38,7 +38,13 @@ const AudioPlayer = ({ url }: AudioPlayerProps) => {
   return (
     <div className="audio-player-container">
       {isPlaying && (
-        <audio autoPlay src={url} onEnded={handleStop} ref={audioRef} />
+        <audio 
+          autoPlay 
+          src={url} 
+          onEnded={handleStop} 
+          ref={audioRef}
+          data-testid="audio-element" 
+        />
       )}
       <Button
         variant={isPlaying ? 'danger' : 'success'}

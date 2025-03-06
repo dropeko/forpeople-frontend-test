@@ -1,5 +1,11 @@
 .radio-card-container {
   background-color: var(--bg-component) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.radio-card-container:hover {
+  transform: translateY(-5px);
+  box-shadow: .25rem .25rem .125rem var(--lightAccent);
 }
 
 .radio-card-img {
@@ -41,6 +47,21 @@
   border-color: var(--secondary) !important;
 }
 
+.radio-card-btn-home:hover {
+  background-color: var(--lightAccent) !important;
+  border-color: var(--primary) !important;
+}
+
+.radio-card-btn-edit:hover {
+  background-color: var(--primary) !important;
+  border-color: var(--lightAccent) !important;
+}
+
+.radio-card-btn-remove:hover {
+  background-color: var(--lightAccent) !important;
+  border-color: var(--secondary) !important;
+}
+
 @media (max-width: 1060px) {
   .radio-card-info {
     width: 60%;
@@ -50,16 +71,13 @@
   }
 }
 
-
 @media (max-width: 530px) {
   .radio-card-info {
     display: none;
   }
-
   .radio-card-left {
     gap: 0.25rem;
   }
-
   .radio-card-img {
     width: 2.5rem !important;
     height: 2.5rem !important;

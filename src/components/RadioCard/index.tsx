@@ -20,12 +20,14 @@ const RadioCard = ({ radio, onAddFavorite, onRemoveFavorite, onEditFavorite }: R
       <Card.Body>
         <div className="d-flex justify-content-between align-items-center">
           <div className="d-flex align-items-center gap-3 radio-card-left">
-            <AudioPlayer url={radio.url_resolved || radio.url} />
+            <div className='pb-1'>
+              <AudioPlayer url={radio.url_resolved || radio.url} />
+            </div>
             {radio.favicon && (
               <img
                 src={radio.favicon}
                 alt={radio.name}
-                className="rounded-circle radio-card-img"
+                className="rounded-circle radio-card-img pt-1 ms-3 mt-1"
               />
             )}
             <div className="radio-card-info">
