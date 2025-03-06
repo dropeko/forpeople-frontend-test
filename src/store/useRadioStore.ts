@@ -5,6 +5,7 @@ const useRadioStore = create<RadioStore>((set) => ({
   allRadios: [],
   favoriteRadios: [],
   setAllRadios: (radios) => set({ allRadios: radios }),
+  setFavoriteRadios: (favorites) => set({ favoriteRadios: favorites }),
   addFavorite: (radio) =>
     set((state) => {
       const isAlreadyFavorite = state.favoriteRadios.some(

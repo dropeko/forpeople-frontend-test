@@ -7,13 +7,14 @@
 .searchbar-input {
   background-color: var(--bg-component) !important;
   color: var(--text-color) !important;
-  border-color: var(--primary) !important;
+  border-color: var(--lightAccent) !important;
 }
 
 .searchbar-icon {
   color: var(--accent);
+  background-color: var(--bg-component);
   font-weight: bold;
-  margin-left: 0.5rem;
+  height: 75% !important;
 }
 
 .searchbar-input::placeholder {

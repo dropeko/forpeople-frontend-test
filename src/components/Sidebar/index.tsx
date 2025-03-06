@@ -18,21 +18,36 @@ const Sidebar = () => {
   const addFavorite = useRadioStore((state) => state.addFavorite);
   const removeFavorite = useRadioStore((state) => state.removeFavorite);
 
+  const removeFavoriteWrapper = (stationuuid: string) => {
+    removeFavorite(stationuuid);
+    const currentFavorites = useRadioStore.getState().favoriteRadios;
+    localStorage.setItem('favoriteRadios', JSON.stringify(currentFavorites));
+  };
+
   const filteredRadios = radios.filter((radio) =>
     radio.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
     <div className="sidebar-container">
-      <SearchBar onSearch={(term) => setSearchTerm(term)} />
       <div>
-        {}
+        {isHomePage ? (
+          <h3 className="sidebar-subtitle">Favorites Radios</h3>
+        ) : (
+          <h3 className="sidebar-subtitle">All Radios</h3>
+        )}
       </div>
+      <hr className='hr-line'/>
+      <SearchBar onSearch={(term) => setSearchTerm(term)} />
+      <hr className='hr-line'/>
       <div className="sidebar-list-container">
         {filteredRadios.map((radio) => (
           <div key={radio.stationuuid} className="sidebar-radio-item">
             <img
-              src={radio.favicon || 'https://img.icons8.com/?size=256w&id=Hh1B7BSHLkhc&format=png'}
+              src={
+                radio.favicon ||
+                'https://img.icons8.com/?size=256w&id=Hh1B7BSHLkhc&format=png'
+              }
               alt={radio.name}
               className="sidebar-radio-img"
             />
@@ -50,7 +65,7 @@ const Sidebar = () => {
                 <DeleteIcon
                   onClick={(e) => {
                     e.stopPropagation();
-                    removeFavorite(radio.stationuuid);
+                    removeFavoriteWrapper(radio.stationuuid);
                   }}
                   className="sidebar-delete-icon"
                 />

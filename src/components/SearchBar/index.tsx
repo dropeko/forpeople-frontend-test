@@ -18,7 +18,8 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
 
   return (
     <div className="searchbar-container">
-      <InputGroup className="mb-2 mt-2 rounded-1">
+      <SearchIcon className="searchbar-icon rounded-1" />
+      <InputGroup className="mb-1 mt-1 rounded-1">
         <Form.Control
           type="text"
           placeholder="Search for name, country or language"
@@ -27,7 +28,6 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
           className="searchbar-input"
         />
       </InputGroup>
-      <SearchIcon className="searchbar-icon" />
     </div>
   );
 };
