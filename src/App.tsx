@@ -8,12 +8,14 @@ import { API_BASE_URL } from './utils/constants/baseUrl';
 
 function App() {
   const setAllRadios = useRadioStore((state) => state.setAllRadios);
+  const setIsLoading = useRadioStore((state) => state.setIsLoading);
 
   useEffect(() => {
     const fetchRadios = async () => {
       try {
+        setIsLoading(true);
         const response = await axios.get(API_BASE_URL);
-        
+
         const filteredRadios = response.data.map((radio: any) => ({
           stationuuid: radio.stationuuid,
           name: radio.name,
@@ -30,11 +32,13 @@ function App() {
         setAllRadios(filteredRadios);
       } catch (error) {
         console.error('Erro ao carregar rádios:', error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
     fetchRadios();
-  }, [setAllRadios]);
+  }, [setAllRadios, setIsLoading]);
 
   return (
     <Router>

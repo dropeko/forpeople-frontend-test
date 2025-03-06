@@ -11,3 +11,15 @@
   --bg-component: var(--tertiary);
   --text-color: var(--lightAccent);
 }
+
+.home-spinner {
+  width: 4rem;
+  height: 4rem;
+  color: var(--primary);
+}
+
+.home-spinner-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--secondary);
+}

@@ -15,6 +15,8 @@ export interface Radio {
 export interface RadioStore {
   allRadios: Radio[];
   favoriteRadios: Radio[];
+  isLoading: boolean;
+  setIsLoading: (loading: boolean) => void;
   setAllRadios: (radios: Radio[]) => void;
   setFavoriteRadios: (favorites: Radio[]) => void;
   addFavorite: (radio: Radio) => void;

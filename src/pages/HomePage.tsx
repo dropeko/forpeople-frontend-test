@@ -5,9 +5,11 @@ import SearchBar from '../components/SearchBar';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Sidebar from '../components/Sidebar';
+import Spinner from 'react-bootstrap/Spinner';
 
 const HomePage = () => {
   const allRadios = useRadioStore((state) => state.allRadios);
+  const isLoading = useRadioStore((state) => state.isLoading);
   const addFavorite = useRadioStore((state) => state.addFavorite);
   const setFavoriteRadios = useRadioStore((state) => state.setFavoriteRadios);
   const [searchTerm, setSearchTerm] = useState('');
@@ -45,7 +47,14 @@ const HomePage = () => {
         <Header />
         <SearchBar onSearch={handleSearch} />
         <div className="flex-grow-1" style={{ overflowY: 'auto' }}>
-          <RadioList radios={filteredRadios} onAddFavorite={addFavoriteWrapper} />
+          {isLoading ? (
+              <div className="d-flex flex-column justify-content-center align-items-center" style={{ height: '100%' }}>
+                <Spinner animation="border" role="status" className='home-spinner' />
+                  <span className='home-spinner-text'>Searching the GOAT radios...</span>
+              </div>
+            ) : (
+              <RadioList radios={filteredRadios} onAddFavorite={addFavoriteWrapper} />
+            )}
         </div>
         <Footer />
       </div>

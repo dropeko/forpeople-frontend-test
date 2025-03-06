@@ -4,6 +4,8 @@ import { RadioStore } from '../utils/types/types';
 const useRadioStore = create<RadioStore>((set) => ({
   allRadios: [],
   favoriteRadios: [],
+  isLoading: true,
+  setIsLoading: (loading) => set({ isLoading: loading }),
   setAllRadios: (radios) => set({ allRadios: radios }),
   setFavoriteRadios: (favorites) => set({ favoriteRadios: favorites }),
   addFavorite: (radio) =>
