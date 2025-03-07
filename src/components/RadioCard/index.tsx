@@ -19,7 +19,7 @@ const RadioCard = ({ radio, onAddFavorite, onRemoveFavorite, onEditFavorite }: R
     <Card className="mb-1 radio-card-container">
       <Card.Body>
         <div className="d-flex justify-content-between align-items-center">
-          <div className="d-flex align-items-center gap-3 radio-card-left">
+          <div className="d-flex align-items-center gap-1 radio-card-left">
             <div className='pb-1'>
               <AudioPlayer url={radio.url_resolved || radio.url} />
             </div>
@@ -27,7 +27,7 @@ const RadioCard = ({ radio, onAddFavorite, onRemoveFavorite, onEditFavorite }: R
               <img
                 src={radio.favicon}
                 alt={radio.name}
-                className="rounded-circle radio-card-img pt-1 ms-3 mt-1"
+                className="rounded-circle radio-card-img pt-1 me-1 mt-1 ms-1"
               />
             )}
             <div className="radio-card-info">
