@@ -41,7 +41,7 @@ const HomePage = () => {
   }, [setFavoriteRadios]);
 
   return (
-    <div className="d-flex w-100" style={{ height: '100vh', overflow: 'hidden' }}>
+    <div className="d-flex" style={{ height: '100vh', overflow: 'hidden' }}>
       <Sidebar />
       <div className="w-100 d-flex flex-column bg-body" style={{ height: '100vh' }}>
         <Header />
@@ -53,7 +53,9 @@ const HomePage = () => {
                   <span className='home-spinner-text'>Searching the GOAT radios...</span>
               </div>
             ) : (
-              <RadioList radios={filteredRadios} onAddFavorite={addFavoriteWrapper} />
+              <div className='home-radio-list'>
+                <RadioList radios={filteredRadios} onAddFavorite={addFavoriteWrapper} />
+              </div>
             )}
         </div>
         <Footer />

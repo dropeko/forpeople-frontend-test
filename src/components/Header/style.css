@@ -36,3 +36,10 @@
     margin-right: 0;
   }
 }
+
+
+@media (max-width: 530px) {
+  .header-button-fav {
+    margin-right: 1.5rem;
+  }
+}

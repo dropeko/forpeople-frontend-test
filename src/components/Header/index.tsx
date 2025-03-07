@@ -23,7 +23,7 @@ const Header = () => {
           <Button
             variant="outline-light"
             onClick={() => navigate('/favorites')}
-            className="d-flex align-items-center header-button"
+            className="d-flex align-items-center header-button-fav header-button"
           >
             <FavoriteIcon className="header-icon" />
             <span className="header-button-text">Favorites</span>
