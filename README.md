@@ -1,4 +1,4 @@
-# Radio App
+# Radio App 📻
  Este projeto é uma aplicação front-end desenvolvida por mim, Pedro Henrique Coli Andrade, como parte de um desafio técnico para testar habilidades em estruturação, tomada de decisões e desenvolvimento de soluções escaláveis utilizando React.js no processo seletivo da empresa ForPeople Fábrica de Softwares. O objetivo é criar uma plataforma onde os usuários possam explorar, ouvir e gerenciar suas rádios favoritas, consumindo uma API de rádios.
 
 ## Descrição
@@ -95,16 +95,25 @@ Além disso, o projeto inclui funcionalidades extras, como testes unitários, co
 
 ## Link de Apresentação
 
-A aplicação está disponível online no seguinte link:
+A aplicação está **disponível** online no seguinte link:
 [Old But Gold Radio Tune](https://old-gold-radio.vercel.app/)
 
 ## Considerações Finais
 
 Este projeto foi desenvolvido como parte de um desafio técnico proposto pela ForPeople. O objetivo foi demonstrar habilidades em desenvolvimento front-end, tomada de decisões técnicas e implementação de funcionalidades escaláveis.
 
-**This is a challenge by Coodesh.**
+**This is a challenge by [Coodesh](https://coodesh.com/).**
 
 ---
 
+## Preview:
+- Desktop view:
+<img src="./src/assets/homeDesktop.png" alt="Desktop">
+
+- Mobile view:
+
+   <img src="./src/assets/mobile.png" alt="Mobile" height="400">
+
+---
 Made with 💙 by **@phca.dev**
 
