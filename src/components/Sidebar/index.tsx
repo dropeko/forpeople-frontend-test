@@ -32,7 +32,7 @@ const Sidebar = () => {
     <div className="sidebar-container">
       <div>
         {isHomePage ? (
-          <h3 className="sidebar-subtitle">Favorites Radios</h3>
+          <h3 className="sidebar-subtitle">Favs Radios</h3>
         ) : (
           <h3 className="sidebar-subtitle">All Radios</h3>
         )}
